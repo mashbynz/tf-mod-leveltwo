@@ -12,6 +12,7 @@ resource "azurerm_network_interface" "nic" {
       name                          = lookup(ip_configuration.value, "name", null)
       subnet_id                     = var.level0_subnet[lookup(ip_configuration.value, "subnet_id", null)].id
       private_ip_address_allocation = lookup(ip_configuration.value, "private_ip_address_allocation", null)
+      public_ip_address_id          = lookup(ip_configuration.value, "public_ip_address_id", null) != null ? var.level0_ip_addresses[lookup(ip_configuration.value, "public_ip_address_id", "")].id : null
     }
   }
 

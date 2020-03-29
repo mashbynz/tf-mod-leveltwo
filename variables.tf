@@ -1,5 +1,6 @@
 variable "level0_vnet" {}
 variable "level0_subnet" {}
+variable "level0_ip_addresses" {}
 variable "governance_storage_accounts" {}
 
 variable "vm_suffix" {
